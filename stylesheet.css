@@ -1,0 +1,22 @@
+
+body {
+	background-color: #b5b5b5;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li{
+	font-size: 20px;
+}
+
+.itemInput {
+	padding-left: 55px;
+	padding-right: 15px;
+}
+
+i {
+	margin: 5px;
+}
+

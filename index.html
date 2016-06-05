@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myCategories">
+    <head>
+        <title>My categories</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script type="text/javascript" src="js_script.js"></script>
+    </head>
+    <body ng-controller="categoriesController">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>CATEGORIES</h1>
+                    <div class="row">
+                        <input type="text" class="form-control" placeholder="Category name" required ng-model="newCategory">
+                        <button class="btn btn-warning pull-right"ng-click="addCategory()">Add Category</button>
+                    </div>
+                    <div>
+                        <ul ng-repeat="category in categories">
+                            <li class="list-group-item" ng-click="toggleItems(category)">
+                                <p ng-hide="category.editing">{{category.name}}<i ng-click="removeCategory($index)"class="glyphicon glyphicon-remove pull-right"></i><i ng-click="startEditing(category)"class="glyphicon glyphicon-pencil pull-right"></i></p>
+                                <form ng-submit="doneEditing(category, $index)">
+                                    <input type="text" class="form-control" ng-show="category.editing" min="1" ng-model="category.name" ng-blur="doneEditing(category)" required autofocus>
+                                </form>
+                           </li>
+
+                           <div ng-show="category.active && !category.editing">
+                                <div class="row itemInput">
+                                    <input type="text" class="form-control" placeholder="Item name" ng-model="category.itemName">
+                                    <button class="btn btn-warning pull-right" ng-click="addItem(category)">Add Item</button>
+                                </div>
+                                <ul ng-repeat="item in category.item">
+                                    <li class="list-group-item">
+                                      <p ng-hide="item.changing">{{item.name}}<i ng-click="removeItem(category, $index)"class="glyphicon glyphicon-remove pull-right"></i><i ng-click="startChanging(item)"class="glyphicon glyphicon-pencil pull-right"></i></p>
+                                      <form ng-submit="doneChanging(item)">
+                                        <input type="text" class="form-control" required ng-show="item.changing" ng-model="item.name" ng-blur="doneChanging(item)" autofocus>
+                                      </form>
+                                    </li>
+                                </ul>
+                           </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

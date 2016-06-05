@@ -1,6 +1,6 @@
 # Categories API
 
-This project is meant to be educational. It was written in order for me to learn about consuming API endoints from the browser and reusing code. I have been provided with the API written in python, and was supposed to write JS code that makes use of all the endpoints. The API allows you to add and remove categories, together wih the possibilty to add and remove items to/from the given category.
+This project is meant to be educational. It was written in order for me to learn about consuming API endpoints from the browser and reusing code. I have been provided with the API written in python, and was supposed to write JS code that makes use of all the endpoints. The API allows you to add and remove categories, together wih the possibilty to add and remove items to/from the given category.
 
 ## Running
 

@@ -43,7 +43,3 @@ DELETE /categories/<category_name>
 	with payload: 
 		items: <item_name>
 	Delete an item from the category
-
-## Foreword
-
-All of the endpoints are utilized with jQuery, feel free to download the project and check out how it looks like. To see my implementation of this, but using AngularJS, see https://github.com/mijakasia/api-task
